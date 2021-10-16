@@ -1,2 +1,2 @@
-# user-info-with-react-client
-Get a user information with React.js (Only Client Side)
+# Display User Details fetched from React.js (Client Side)
+Get a user information with React.js using react hooks having a fetch call
