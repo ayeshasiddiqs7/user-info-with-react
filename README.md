@@ -1,4 +1,4 @@
-# Fetch User with React
+# Fetch User with React.js
 
 This is the first delivery of `Fetch a User Info` series of work. It's done with the use of various libraries and/or framework.
 
