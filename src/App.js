@@ -2,13 +2,18 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { Button, Card, Badge } from "react-bootstrap";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import now from "performance-now";
 
 function App() {
   const [userInfo, setUserInfo] = useState({});
+  const [timeTaken, setTimeTaken] = useState(null);
 
   useEffect(async () => {
+    const start = now();
     let resp = await fetch("https://api.randomuser.me/");
     setUserInfo(await resp.json());
+    const end = now();
+    setTimeTaken((end - start).toFixed(3) / 1000);
   }, []);
 
   return (
@@ -16,6 +21,10 @@ function App() {
       <div className="title-style">
         <h1>User Details</h1>
         <h6 className="mb-2 text-muted">With React.js (Client Side)</h6>
+        <p>
+          Time taken to fetch the user:{" "}
+          {timeTaken === null ? <i>calculating</i> : <>{timeTaken}s</>}{" "}
+        </p>
       </div>
       <br />
       {userInfo.hasOwnProperty("results") ? (
