@@ -8,12 +8,15 @@ function App() {
   const [userInfo, setUserInfo] = useState({});
   const [timeTaken, setTimeTaken] = useState(null);
 
-  useEffect(async () => {
-    const start = now();
-    let resp = await fetch("https://api.randomuser.me/");
-    setUserInfo(await resp.json());
-    const end = now();
-    setTimeTaken((end - start).toFixed(3) / 1000);
+  useEffect(() => {
+    async function fetchData() {
+      const start = now();
+      let resp = await fetch("https://api.randomuser.me/");
+      setUserInfo(await resp.json());
+      const end = now();
+      setTimeTaken((end - start).toFixed(3) / 1000);
+    }
+    fetchData();
   }, []);
 
   return (
