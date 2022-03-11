@@ -88,7 +88,11 @@ function App() {
       <br />
       <Badge style={{ backgroundColor: "coral" }}>
         Learn more about how to make an API call with react 👉🏻
-        <a href="https://reactjs.org/docs/faq-ajax.html" target="_blank">
+        <a
+          href="https://reactjs.org/docs/faq-ajax.html"
+          rel="noreferrer"
+          target="_blank"
+        >
           https://reactjs.org/docs/faq-ajax.html
         </a>
       </Badge>
